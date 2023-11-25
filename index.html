@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timos Internetzugang</title>
+    <style>
+        .box {
+            width: 300px;
+            max-width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: aqua;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <h1>Timos Internetzeit</h1>
+
+    <div class="box">
+        <p>Aktuell: <span id="currenttime">0</span></p>
+    </div>
+
+    <p>Bewerbung zu</p>
+    
+    <div>
+        <p><input type="checkbox" id="follmann" name="Follmann" onclick="bewerbung()" /> Follmann</p>
+        <p><input type="checkbox" id="rk" name="RK" onclick="bewerbung()" /> RK Rose & Krieger</p>
+        <p><input type="checkbox" id="minda" name="Minda" onclick="bewerbung()" /> Minda</p>
+        <p><input type="checkbox" id="epv" name="EPV" onclick="bewerbung()" /> Rüter EPV</p>
+        <p><input type="checkbox" id="shop" name="Shop" onclick="bewerbung()" /> Lücks Computer Shop</p>
+        <p><input type="checkbox" id="westermann" name="Westermann" onclick="bewerbung()" /> Schaltanlagen Westermann</p>
+    </div>
+
+    <script>
+        function bewerbung() {
+            var follmann = document.getElementById("follmann");
+            var rk = document.getElementById("rk");
+            var minda = document.getElementById("minda");
+            var epv = document.getElementById("epv");
+            var shop = document.getElementById("shop");
+            var westerman = document.getElementById("westerman");
+
+            var output = document.getElementById("currenttime");
+
+            var time = 0;
+            if (follmann.checked) {
+                time += 1;
+            }
+            if (minda.checked) {
+                time += 1;
+            }
+            if (rk.checked) {
+                time += 1;
+            }
+            if (epv.checked) {
+                time += 1;
+            }
+            if (shop.checked) {
+                time += 1;
+            }
+            if (westermann.checked) {
+                time += 1;
+            }
+
+            output.innerText = time*60;
+
+            if (time == 6) {
+                output.innerText = "Keine Begrenzung"
+            }
+        }
+
+    </script>
+</body>
+</html>
