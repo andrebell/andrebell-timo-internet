@@ -71,6 +71,11 @@
             }
         }
 
+        document.onreadystatechange = function() {
+            if (document.readyState === "complete") {
+                bewerbung();
+            }
+        };
     </script>
 </body>
 </html>
